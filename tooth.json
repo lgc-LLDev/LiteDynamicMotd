@@ -1,0 +1,20 @@
+{
+  "format_version": 1,
+  "tooth": "github.com/lgc-LLSEDev/LiteDynamicMotd",
+  "version": "0.1.0",
+  "dependencies": {},
+  "information": {
+    "name": "LiteDynamicMotd",
+    "description": "简易动态 Motd 插件",
+    "author": "student_2333 <lgc2333@126.com>",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/lgc-LLSEDev/LiteDynamicMotd"
+  },
+  "placement": [
+    {
+      "source": "LiteDynamicMotd.js",
+      "destination": "plugins/LiteDynamicMotd.js"
+    }
+  ],
+  "possession": ["plugins/LiteDynamicMotd/"]
+}

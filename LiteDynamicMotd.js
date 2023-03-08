@@ -1,9 +1,10 @@
 // LiteLoaderScript Dev Helper
-/// <reference path="d:\Coding\LLSEAids/dts/llaids/src/index.d.ts"/>
-/* global mc File */
+/// <reference path="d:\Coding\bds\LLSEAids/dts/llaids/src/index.d.ts"/>
+
+/* global mc ll File */
 
 const PLUGIN_NAME = 'LiteDynamicMotd';
-// const PLUGIN_VERSION = [0, 1, 0];
+const PLUGIN_VERSION = [0, 1, 0];
 
 const PLUGIN_DATA_PATH = `plugins/${PLUGIN_NAME}`;
 const PLUGIN_CONFIG_PATH = `${PLUGIN_DATA_PATH}/config.json`;
@@ -41,4 +42,9 @@ function changeMotd() {
 mc.listen('onServerStarted', () => {
   setInterval(changeMotd, pluginConfig.switchInterval);
   changeMotd();
+});
+
+ll.registerPlugin(PLUGIN_NAME, '简易动态 Motd 插件', PLUGIN_VERSION, {
+  Author: 'student_2333',
+  License: 'Apache-2.0',
 });
