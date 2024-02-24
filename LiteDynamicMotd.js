@@ -1,10 +1,11 @@
 // LiteLoaderScript Dev Helper
 /// <reference path="../HelperLib/src/index.d.ts"/>
 
-/* global mc ll File */
+/* global mc ll file */
 
 const PLUGIN_NAME = 'LiteDynamicMotd';
-const PLUGIN_VERSION = [0, 1, 0];
+/** @type {[number, number, number]} */
+const PLUGIN_VERSION = [0, 1, 1];
 
 const PLUGIN_DATA_PATH = `plugins/${PLUGIN_NAME}`;
 const PLUGIN_CONFIG_PATH = `${PLUGIN_DATA_PATH}/config.json`;
@@ -15,13 +16,14 @@ let pluginConfig = {
 };
 
 function updateConfig() {
-  File.writeTo(PLUGIN_CONFIG_PATH, JSON.stringify(pluginConfig, null, 2));
+  file.writeTo(PLUGIN_CONFIG_PATH, JSON.stringify(pluginConfig, null, 2));
 }
 
 function loadConfig() {
-  if (File.exists(PLUGIN_CONFIG_PATH))
-    pluginConfig = JSON.parse(File.readFrom(PLUGIN_CONFIG_PATH));
-  else updateConfig();
+  if (file.exists(PLUGIN_CONFIG_PATH)) {
+    const res = file.readFrom(PLUGIN_CONFIG_PATH);
+    if (res) pluginConfig = JSON.parse(res);
+  } else updateConfig();
 }
 
 loadConfig();
