@@ -14,7 +14,7 @@
   "motdList": ["这是第一个Motd", "这是第二个Motd", "这是第三个Motd"],
 
   // 切换延迟，单位毫秒
-  "switchInterval": 5000
+  "switchInterval": 5000,
 }
 ```
 
